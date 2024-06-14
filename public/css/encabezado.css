@@ -1,0 +1,94 @@
+.logo{
+    display: flex;
+    width: 15%;
+    height: 100%;
+}
+
+.logo-ags{
+    width: 100%;
+    margin: auto;
+}
+
+.navegacion{
+    display: flex;
+    margin: auto;
+    width: 40%;
+  }
+
+  .navegacion{
+    display: flex;
+    margin: auto;
+    width: 40%;
+  }
+  
+  .button {
+    text-decoration: none;
+    outline: 0 !important;
+    border: 0 !important;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #12AA9E;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 3rem;
+  }
+  
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+  }
+  
+  .text {
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    background: #12AA9E;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #12AA9E transparent;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: 120%;
+    opacity: 1;
+    visibility: visible;
+    background: #12AA9E;
+    transform: translate(-50%, -5px);
+  }

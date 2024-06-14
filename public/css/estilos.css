@@ -1,0 +1,116 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+}
+
+html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #06d5d5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3B4480;
+    border-radius: 8px;
+}
+
+.subrayado {
+    width: 320px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #12AA9E;
+    display: block;
+    margin: auto;
+}
+
+.circulo {
+    width: 120px;
+    height: 120px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 3px #3B4480;
+    display: flex;
+    margin: auto;
+    margin-top: 60px;
+
+}
+
+.circulo img {
+    display: block;
+    margin: auto;
+    width: 8em;
+    margin-top: -9px;
+    margin-left: -4px;
+
+}
+
+ .circulo .img{
+    width: 9.6em;
+    margin-left: -19px;
+    margin-top: -19PX;
+ }
+
+ .circulo .validacion{
+    margin-left: -6.6px;
+    margin-top: -7.10px;
+ }
+
+ .circulo .contratos_img{
+    margin-left: -3.1em;
+    margin-top: -3.6em;
+ }
+
+ .circulo .roles_img{
+    margin-left: -1.4em;
+    margin-top: -1.5em;
+ }
+
+.modc {
+    display: flex;
+    justify-content: center;
+}
+
+.modulo {
+    text-transform: uppercase;
+    width: 140px;
+}
+
+.modulo h5 {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #3B4480;
+    font-weight: bold;
+    text-align: center;
+}
+
+.panelplantilla {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.btn-soportes {
+
+    color: #12AA9E;
+
+}
+
+.btn-soportes:hover {
+    color: #3B4480;
+}
