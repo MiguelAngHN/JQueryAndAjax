@@ -3,27 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Patient;
+use App\Services\PatientsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
-    public function index()
-    {
-        $patients = DB::table('Patients')->get();
-        
-        return response()->json($patients);
+
+    protected $patientsService;
+
+    public function __construct(PatientsService $patientsService) {
+
+        $this->patientsService = $patientsService;
     }
 
-    public function store(Request $request)
-    {
-        $patient = DB::table('Patients')->insert([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'age' => $request->input('age'),
-        ]);
+    public function index() {
 
-        return response()->json($patient);
+        return $this->patientsService->index();
+    }
+
+    public function store(Request $request) {
+
+        return $this->patientsService->store($request);
     }
 
 }

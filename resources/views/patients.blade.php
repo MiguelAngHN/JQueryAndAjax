@@ -13,12 +13,10 @@
 <body>
     
 
-    <h1>Ejemplos</h1>
+    <h1>Examples GET - POST</h1>
     <br><br>
 
-
-
-    <form id="patientForm">
+    <form id="patientForm" class="form-control">
         <div class="mb-3">
           <label for="name" class="form-label">Nombre</label>
           <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
@@ -34,10 +32,24 @@
         <button type="submit" class="btn btn-primary">ENVIAR</button>
       </form>
 
-      <ul id="patientList"></ul>
+      <br><h2>Lista de Pacientes</h2><br>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Correo Electronico</th>
+                  <th>Edad</th>
+              </tr>
+          </thead>
+  
+          <tbody id="patientList">
+          
+          </tbody>
+      </table>
 
     <script>
-                $(document).ready(function() {
+            $(document).ready(function() {
+
             function loadPatients() {
                 $.ajax({
                     url: "{{ route('patients.index') }}",
@@ -45,12 +57,17 @@
                     success: function(patients) {
                         $('#patientList').empty();
                         patients.forEach(function(patient) {
-                            // $('#patientList').append('<br><li>' + patient.name + patient.email + '</li>' + '<li>' + patient.age + '</li>');
-                            console.log(patient);
+                            $('#patientList').append(
+                                '<tr>'+ 
+                                    '<td>' + patient.name + '</td>' + 
+                                    '<td>' + patient.email + '</td>' + 
+                                    '<td>' + patient.age + '</td>' +
+                                '</tr>'
+                            );
                         });
                     },
                     error: function(xhr) {
-                        console.log('Error:', xhr);
+                        console.log('Error en GET:', xhr);
                     }
                 });
             }
@@ -65,12 +82,12 @@
                     method: 'POST',
                     data: $(this).serialize(),
                     success: function(patient){
-                        // loadPatients();
-                        // $('#patientForm')[0].reset();
-                        console.log(patient);
+                        loadPatients();
+                        $('#patientForm')[0].reset();
+                        // console.log(patient);
                     },
                     error: function(xhr) {
-                        console.log('Error:', xhr);
+                        console.log('Error EN POST:', xhr);
                     }
                 });
             });

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EjemploController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,6 @@ Route::get('/ejemplo2', function () {
 
 Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
 Route::post('/patients', [PatientController::class, 'store'])->name('patients.store');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/report', [UserController::class, 'report'])->name('users.report');
